@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content%}
+    <!--Table-->
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <table class="table bg-white">
+                    <thead class="bg-info">
+                        <tr class="text-white">
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    {% for z in stf %}
+                    <tbody>
+                        <tr>
+                            <th scope="row"><a class="btn btn-info btn-sm" href="{% url "profiling" z.id %}">View</a></th>
+                            <td> {{z.first}} </td>
+                            <td> {{z.last}} </td>
+                            <td> {{z.handel}} </td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <!--End Table-->
+{% endblock %}

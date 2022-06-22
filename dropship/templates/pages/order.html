@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content%}
+        <!--Table-->
+        <div class="container">
+            <div class="row my-4">
+                <div class="col-md-4">
+    
+                </div>
+                <div class="col-md-8">
+                    <table class="table bg-white">
+                        <thead class="bg-info">
+                            <tr class="text-white">
+                                <th scope="col">#</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Order by</th>
+                            </tr>
+                        </thead>
+                        {% for x in ord %}
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{ x.id }}</th>
+                                <td>{{ x.product }}</td>
+                                <td>{{ x.category }}</td>
+                                <td>{{ x.quantité }}</td>
+                                <td>
+                                    {{ x.order_by }}
+                                </td>
+                            </tr>
+                        
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+    
+        </div>
+        <!--End Table-->
+{% endblock %}
